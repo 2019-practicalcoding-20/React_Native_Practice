@@ -16,6 +16,8 @@ export default class CityList extends React.Component {
   }
 
   componentDidMount() {
+    //localhost에서 spring 서버를 실행할 때 다음 줄을 활성화하십시오.
+    //fetch('http://localhost:8080/weather-crawler/available-cities')
     fetch('http://demo6468405.mockable.io/weather-crawlers/cities')
       .then(response => response.json())
       .then(cities => {
@@ -53,11 +55,15 @@ export default class CityList extends React.Component {
     );
   }
 }
-
+//배경색 수정하였습니다.
 const styles = StyleSheet.create({
+  navigation:{
+    backgroundColor:'black',
+  },
+
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     marginTop: Constants.statusBarHeight,
   },
 
@@ -65,11 +71,12 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     justifyContent: 'center',
-
+    backgroundColor: 'black',
     borderWidth: 1,
     borderColor: 'orange',
   },
   text: {
+    color:'white',
     fontSize: 20,
     textAlign: 'center',
   }
